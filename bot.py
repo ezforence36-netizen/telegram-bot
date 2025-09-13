@@ -1,9 +1,11 @@
 import asyncio
+import os
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.filters import Command
 
-TOKEN = ""
+# Получаем токен из переменной окружения
+TOKEN = os.getenv('BOT_TOKEN')
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
@@ -86,5 +88,4 @@ async def main():
     await dp.start_polling(bot) 
 
 if __name__ == "__main__": 
-
     asyncio.run(main())
